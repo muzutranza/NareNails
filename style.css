@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap');
+
+:root {
+    --rosa: rgb(255, 143, 143);
+    --crema: rgb(252, 181, 115); 
+    --degrado: linear-gradient(90deg, var(--rosa),var(--crema));
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    border:none;
+    text-transform: capitalize;
+}
+
+::selection {
+    background: var(--rosa);
+    color: var(--crema);
+
+}
+
+html {
+    font-size: 62.4%;
+    overflow: hidden;
+
+}
+
+body {
+    background: white
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    padding: 2rem 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    z-index:1000;
+  
+
+
+}
+
+header .logo {
+    font-size: 2rem;
+    color: var(--crema);
+}
+
+header .logo span {
+    color: var(--rosa);
+}
+
+header .navbar a {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    color:var(--rosa);
+}
+
+header .navbar a:hover{
+    color: var(--crema);
+
+}
+
+header input {
+    display: none;
+}
+
+header label {
+    font-size:2rem ;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@media (max-width:1200px) {
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width:760px){
+    header label{
+        visibility:visible;
+        opacity: 1;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 1rem 2rem;
+        border-top: .1re, solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        
+    }
+    header input:checked ~ .navbar {
+            transform: scaleY(1);
+            opacity: 1;
+
+    }
+    header input:checked~label::before {
+        content: '\f00d';
+    }
+
+
+}
+
+@media (max-width:450px) {
+
+        html {
+            font-size: 49%;
+
+        }
+        
+
+}
+
